@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed Back</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'weatherappImage/contact.png' %}">
+    <link rel="stylesheet" href="{% static 'weatherappCss/contact.css'%}">
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+        <div class="screen">
+            <div class="screen-header">
+            <div class="screen-header-left">
+                <div class="screen-header-button close"></div>
+                <div class="screen-header-button maximize"></div>
+                <div class="screen-header-button minimize"></div>
+            </div>
+            <div class="screen-header-right">
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+            </div>
+            </div>
+            <div class="screen-body">
+            <div class="screen-body-item left">
+                <div class="app-title">
+                <span>FEED BACK</span>
+                
+                </div>
+                <div class="app-contact" style="font-size: 15px;">CONTACT <a href="mailto:arulraj637@gmail.com">arulraj637@gmail.com</a></div>
+            </div>
+            <div class="screen-body-item">
+                <div class="app-form">
+                <form method="post" action="{% url 'contact'%}">
+                    {% csrf_token %}
+                <div class="app-form-group">
+                    <input class="app-form-control name" id="name" name="name" placeholder="USER NAME">
+                </div>
+                <div class="app-form-group">
+                    <input class="app-form-control email" id="email" name="email" placeholder="EMAIL">
+                </div>
+
+                <div class="app-form-group message">
+                    <input class="app-form-control message" id="message" name="message" placeholder="MESSAGE">
+                </div>
+                <div class="app-form-group buttons">
+                    <button class="app-form-button" type="submit">SEND</button>
+                </div>
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

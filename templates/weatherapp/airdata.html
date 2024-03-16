@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Data</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'weatherappImage/airPageIcon.png' %}">
+    <link rel="stylesheet" href=" {% static 'weatherappCss/airdata.css'%}"> 
+</head>
+<body style="background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('{% static 'weatherappImage/c5.jpg' %}');">
+    
+        <h1>"Breathe easy, breathe healthy.
+            Clean air, healthy planet. <br>
+            Go green to breathe clean"
+        </h1>
+
+        <h2 class="des">
+            Air Quality Description
+        </h2>
+        <label class="descrip">{{airQualityCategory}}</label>
+
+        <div class="weather-data">
+            <img src="{% static 'weatherappImage/airGraph.png' %}" alt="Network slow .." height="400px" width="700px">
+        </div>
+    
+    <div class="container">
+
+        <div class="image-container">
+            <img src=" {% static 'weatherappImage/pm25-en.png' %}" alt="w1">
+        </div>
+
+        <div class="contentWrapper">
+            <div class="content">
+                <span class="textWrapper">
+                    <span></span>
+                </span>
+                <h2>PM25 - "{{pm25}}"</h2>
+                <p>Definition: PM2.5 refers to particulate matter with a diameter of less than 2.5 micrometers (µm). 
+                    These particles are tiny and can remain suspended in the air for long periods. <br> <br>
+
+                    Simplification: While the technical definition of PM2.5 may not be entirely accurate, 
+                    it serves as a simplistic way to explain the small size of these particles to the general public.
+                    
+                    Health Concerns: There has been a rapid increase in concern about the potential health impacts of 
+                    PM10 (particulate matter with a diameter of less than 10 µm) in recent years. 
+                    PM10 particles can cause respiratory issues and other health problems.
+                </p>
+                <button type="button" class="know-button"><span class="highlight-span"></span><a href="https://aq.riyadhenv.gov.sa/pollutant?name=PM25" target="_blank" class="button-link" >Know more</a></button>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="{% static 'weatherappImage/pm10-en.png' %}" alt="w1">
+        </div>
+
+        <div class="contentWrapper">
+            <div class="content">
+                <span class="textWrapper">
+                    <span></span>
+                </span>
+                <h2>PM10 - "{{pm10}}" </h2>
+                <p>Definition: PM10 refers to particulate matter with a diameter of less than 10 micrometers (µm). 
+                    These particles are small, approximately 1/7th the thickness of a human hair. <br> <br>
+
+                    Particle Size: PM10 particles are relatively large compared to PM2.5 and other fine particulate matter. 
+                    Despite their larger size, PM10 particles can still remain suspended in the air and be inhaled into the respiratory system.
+                    
+                    Human Health Impact: PM10 particles can cause various health issues when inhaled, 
+                    including respiratory problems such as asthma, bronchitis, and other lung diseases. 
+                    They can also exacerbate existing cardiovascular conditions.
+                </p>
+                <button type="button" class="know-button"><span class="highlight-span"></span><a href="https://aq.riyadhenv.gov.sa/pollutant?name=pm10"target="_blank"  class="button-link" >Know more</a></button>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="{% static 'weatherappImage/o3-en.png' %}" alt="w1">
+        </div>
+
+        <div class="contentWrapper">
+            <div class="content">
+                <span class="textWrapper">
+                    <span></span>
+                </span>
+                <h2>O3 - "{{o3}}"</h2>
+                <p>Ozone Formation: Ozone (O3) is produced when nitrogen dioxide (NO2), hydrocarbons, and sunlight react. 
+                    These pollutants are emitted from various sources. <br><br>
+
+                    Urban vs. Rural: Urban areas with high NO emissions have lower ozone levels due to NO's role in reducing ozone. 
+                    Rural areas, with fewer NO emissions, 
+                    experience higher ozone levels, particularly during hot, sunny weather ("summer smog").
+                </p>
+                <button type="button" class="know-button"><span class="highlight-span"></span><a href="https://aq.riyadhenv.gov.sa/pollutant?name=o3" target="_blank" class="button-link" >Know more</a></button>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src=" {% static 'weatherappImage/no2-en.png' %}" alt="w1">
+        </div>
+
+        <div class="contentWrapper">
+            <div class="content">
+                <span class="textWrapper">
+                    <span></span>
+                </span>
+                <h2>NO2 - "{{no2}}"</h2>
+                <p>Chemical Formula: NO2, which stands for nitrogen dioxide, is a chemical compound composed of 
+                    one nitrogen atom (N) and two oxygen atoms (O). Its molecular formula is NO2. <br><br>
+
+                    Classification:
+                    NO2 belongs to the group of nitrogen oxides, which are compounds containing nitrogen and oxygen atoms.  <br>
+                    Physical Properties: <br>
+                    Color: At higher temperatures, NO2 appears as a reddish-brown gas.
+                    Odor: NO2 has a characteristic sharp and pungent odor, which can be detected even at low concentrations.
+                </p>
+                <button type="button" class="know-button"><span class="highlight-span"></span><a href="https://aq.riyadhenv.gov.sa/pollutant?name=no2" target="_blank" class="button-link" >Know more</a></button>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src=" {% static 'weatherappImage/so2.png' %}" alt="w1">
+        </div>
+
+        <div class="contentWrapper">
+            <div class="content">
+                <span class="textWrapper">
+                    <span></span>
+                </span>
+                <h2>SO2 - "{{so2}}"</h2>
+                <p>Chemical Formula: SO2, which stands for sulfur dioxide, 
+                    is a chemical compound composed of one sulfur atom (S) and two oxygen atoms (O). 
+                    Its molecular formula is SO2. <br>
+                    Sources: <br>
+                    Natural Sources: SO2 can be released into the atmosphere through volcanic eruptions, forest fires, and other natural processes.
+                    Anthropogenic Sources: Human activities such as burning fossil fuels (coal, oil, and natural gas) for energy production, industrial processes (such as metal smelting), and transportation are significant sources of SO2 emissions.
+                </p>
+                <button type="button" class="know-button"><span class="highlight-span"></span><a href="https://aq.riyadhenv.gov.sa/pollutant?name=so2"target="_blank"  class="button-link" >Know more</a></button>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="{% static 'weatherappImage/co.png' %}" alt="w1">
+        </div>
+        <div class="contentWrapper">   
+            <div class="content">
+                <span class="textWrapper">
+                    <span></span>
+                </span>
+                <h2>CO - "{{co}}"</h2>
+                <p>Chemical Formula: CO, which stands for carbon monoxide, is a chemical compound composed of one carbon atom (C) and 
+                    one oxygen atom (O). Its molecular formula is CO. <br>
+
+                    Sources: <br>
+                    
+                    <br>Incomplete Combustion: CO is produced when carbon-containing fuels such as gasoline, natural gas, coal, and wood are burned incompletely due to insufficient oxygen supply.
+                    <br>Vehicular Emissions: Automobiles and other vehicles are significant sources of CO emissions, particularly in urban areas with heavy traffic congestion.
+                    <br>Industrial Processes: Certain industrial activities such as steel production, chemical manufacturing, and biomass burning can also release CO into the atmosphere.
+
+                    Definition: Air quality refers to the condition of the air in terms of the presence of pollutants, 
+                    allergens, and other harmful substances that can affect human health, ecosystems, and the environment. <br><br>
+
+                    Pollutants: Common air pollutants include particulate matter (PM), nitrogen dioxide (NO2), 
+                    sulfur dioxide (SO2), carbon monoxide (CO), ozone (O3), and volatile organic compounds (VOCs). 
+                    These pollutants can come from various sources, including vehicle emissions, industrial activities, and 
+                    natural processes like wildfires.
+                </p>
+                <button type="button" class="know-button"><span class="highlight-span"></span><a href="https://aq.riyadhenv.gov.sa/pollutant?name=co" target="_blank"  class="button-link" >Know more</a></button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

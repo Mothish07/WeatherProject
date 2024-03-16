@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-Main Page</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'weatherappImage/clouds.png' %}">
+    <link rel="stylesheet" href="{% static 'weatherappCss/main.css'%}">
+</head>
+<body>
+    <div class="banner" style="background-image:linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.65)), url('{% static 'weatherappImage/nature.jpg'%}');">
+
+        <div class="navbar">
+            <img src="{% static 'weatherappImage/clouds.png'%} " alt="clouds" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="{% url 'contact' %}">FEED BACK</a></li>
+            </ul>
+            <div class="content">
+                <h1>Weather Visualization</h1>
+                <p>“You are the sky. Everything else – it’s just the weather.”</p>
+                <button type="button"><span></span><a href="{% url 'airdata' %}" class="button-link">AirData</a></button>
+                <button type="button"><span></span><a href="{% url 'weatherdata' %}" class="button-link" >WeatherData</a></button>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+
+</html>

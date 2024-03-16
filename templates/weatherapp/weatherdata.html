@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data </title>
+    <link rel="icon" type="image/x-icon" href="{% static 'weatherappImage/clouds.png' %}">
+    <link rel="stylesheet" href=" {% static 'weatherappCss/weatherpage.css'%}">
+</head>
+<body style="background-image:linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.20)), url('{% static 'weatherappImage/c6.jpg' %} ');">
+    <h1>"Sunshine is delicious, rain is refreshing, wind braces us up, snow is exhilarating; <br>
+        there is really no such thing as bad weather, only different kinds of good weather"
+    </h1>
+    <h2 class="des">
+        Weather Description  :  <span class="descrip">{{weatherDescription}}</span >
+    </h2>
+    
+
+    <div class="weather-data">
+        <img src="{% static 'weatherappImage/weatherGraph.png' %}" alt="Network slow.." height="400px" width="700px">
+    </div>
+   
+    <div class="container">
+
+        <div class="image-container">
+            <video src=" {% static 'weatherappVideo/Temperature.mp4' %}" alt="Your Video" autoplay loop muted></video>
+        </div>
+
+        <div class="contentWrapper">
+            <div class="content">
+                <span class="textWrapper">
+                    <span></span>
+                </span>
+                <h2>Temperature - "{{temperature}}"</h2>
+                <p>Definition: Temperature is a measure of the average kinetic energy of the particles in a substance or system. In weather contexts, it refers to the degree of hotness or coldness of the atmosphere. <br><br>
+
+                    Measurement Units: Temperature is commonly measured in Celsius (°C), Fahrenheit (°F), or Kelvin (K) scales. Celsius and Fahrenheit are most widely used for weather reporting. <br>
+                    
+                    Variability: Temperature can vary throughout the day, between different locations, and across seasons due to factors such as solar radiation, atmospheric conditions, and geographical features.
+                </p>
+                <button type="button" class="know-button"><span class="highlight-span"></span><a href="https://en.wikipedia.org/wiki/Temperature" target="_blank" class="button-link" >Know more</a></button>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <video src=" {% static 'weatherappVideo/humid.mp4' %}" alt="Your Video" autoplay loop muted></video>
+        </div>
+
+        <div class="contentWrapper">
+            <div class="content">
+                <span class="textWrapper">
+                    <span></span>
+                </span>
+                <h2>Humidity - "{{humidity}}"</h2>
+                <p>Definition: Humidity denotes the presence of water vapor in the air, typically unseen by the naked eye. <br><br>
+
+                    Indicators: Humidity signals potential rain, dew formation, or foggy conditions. <br>
+                    
+                    Influence Factors: Humidity is influenced by both atmospheric pressure and temperature. <br>
+                    
+                    Temperature Impact: In colder air, the same amount of water vapor can lead to higher relative humidity compared to warmer air. <br>
+
+                </p>
+                <button type="button" class="know-button"><span class="highlight-span"></span><a href="https://en.wikipedia.org/wiki/Humidity" target="_blank" class="button-link" >Know more</a></button>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <video src="{% static 'weatherappVideo/wind1.mp4' %}" alt="Your Video" autoplay loop muted></video>
+        </div>
+
+        <div class="contentWrapper">
+            <div class="content">
+                <span class="textWrapper">
+                    <span></span>
+                </span>
+                <h2>Wind Speed - "{{windSpeed}}"</h2>
+                <p>Definition: Wind speed refers to the rate at which air moves horizontally past a fixed point. <br><br>
+
+                    Measurement Units: Wind speed is commonly measured in units such as meters per second (m/s), kilometers per hour (km/h), miles per hour (mph), or knots (nautical miles per hour). <br>
+                    
+                    Instruments: Anemometers are commonly used instruments to measure. They come in various designs, including cup, propeller, and sonic anemometers.
+                    
+                    
+                <button type="button" class="know-button"><span class="highlight-span"></span><a href="https://en.wikipedia.org/wiki/Wind_speed"  target="_blank" class="button-link" >Know more</a></button>
+            </div>
+        </div>
+        
+        <div class="image-container">
+            <video src=" {% static 'weatherappVideo/rain.mp4' %}" alt="Your Video" autoplay loop muted></video>
+        </div>
+
+        <div class="contentWrapper">
+            <div class="content">
+                <span class="textWrapper">
+                    <span></span>
+                </span>
+                <h2>Rain - "{{rain}}"</h2>
+                <p> Definition: Rain is precipitation in the form of liquid water droplets that fall from clouds and reach the ground. <br><br>
+
+                    Formation: Rain occurs when water vapor in the atmosphere condenses into droplets, which then become heavy enough to fall due to gravity. <br>
+                    
+                    Types: Rainfall can vary in intensity and duration, ranging from light drizzle to heavy downpour, and can be categorized as steady, intermittent, or showery.
+                <button type="button" class="know-button"><span class="highlight-span"></span><a href="https://en.wikipedia.org/wiki/Rain"  target="_blank" class="button-link" >Know more</a></button>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <video src="{% static 'weatherappVideo/Snow.mp4' %}" alt="Your Video" autoplay loop muted></video>
+        </div>
+
+        <div class="contentWrapper">
+            <div class="content">
+                <span class="textWrapper">
+                    <span></span>
+                </span>
+                <h2>Snow - "{{snow}}"</h2>
+                <p>Formation: Snow forms when water vapor in the atmosphere condenses directly into ice crystals without passing through the liquid phase. These crystals then combine to form snowflakes. <br><br>
+
+                    Conditions: Snow typically occurs when temperatures are below freezing (0°C or 32°F) in the atmosphere and at the surface. However, factors like humidity and atmospheric pressure also influence snow formation. <br>
+                    
+                    Types: Snowfall can vary in intensity, ranging from light flurries to heavy snowstorms. It can also be categorized based on snowflake size and shape, such as powdery, granular, or wet snow.
+                </p>
+                <button type="button" class="know-button"><span class="highlight-span"></span><a href="https://en.wikipedia.org/wiki/Snow"  target="_blank" class="button-link" >Know more</a></button>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <video src="{% static 'weatherappVideo/atmosphericPressure.mp4' %}" alt="Your Video" autoplay loop muted></video>
+        </div>
+
+        <div class="contentWrapper">
+            <div class="content">
+                <span class="textWrapper">
+                    <span></span>
+                </span>
+                <h2>Atmospheric Pressure - "{{atmosphericPressure}}"</h2>
+                <p>Definition: Atmospheric pressure, also known as air pressure, is the force exerted by the weight of the atmosphere on the Earth's surface and objects within it. <br><br>
+
+                    Measurement Units: Atmospheric pressure is commonly measured in units such as millibars (mb), kilopascals (kPa), inches of mercury (inHg), or pounds per square inch (psi). <br>
+                    
+                    Variability: Atmospheric pressure varies with altitude, temperature, and weather conditions. It typically decreases with increasing altitude due to the decreasing density of air molecules.
+                </p>
+                <button type="button" class="know-button"><span class="highlight-span"></span><a href="https://en.wikipedia.org/wiki/Atmospheric_pressure"  target="_blank" class="button-link" >Know more</a></button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% load leaflet_tags %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Welcome! Weather Visualization</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'weatherappImage/clouds.png' %}">
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <link rel="stylesheet" href="{% static 'weatherappCss/index.css' %}">
+</head>
+<body>
+    <div class="banner" style="background-image:linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.65)), url('{% static 'weatherappImage/nature.jpg' %}');">
+        <div class="navbar">
+            <img src="{% static 'weatherappImage/clouds.png' %}" alt="clouds" class="logo">
+            <div class="content">
+                <h1> Welcome To Weather Visualization</h1>
+                <p>“You are the sky. Everything else – it’s just the weather.”</p>
+                <form method="post" action="{% url 'home' %}">
+                    {% csrf_token %}
+                    <input type="hidden" id="id_latitude" name="latitude">
+                    <input type="hidden" id="id_longitude" name="longitude">
+                    <button type="button" class="button-link" onclick="useCurrentLocation()">Current Location</button>
+                    <h6>or</h6>
+                    <h3 style="margin: 20px 10px; width: 150px; margin-left:46%; text-align: center;font-weight: lighter; font-style: italic;">Select Location</h3>
+                    <div id="map" style="height: 500px; width:350px; margin-left:41%; border-radius: 10%;"></div>
+                   <button type="submit" class="button-link" >Submit-location</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var map = L.map('map').setView([ 11.719238, 78.0800749], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19
+        }).addTo(map);
+
+        var marker;
+        map.on('click', function(e) {
+            updateLocation(e.latlng.lat, e.latlng.lng);
+            if (marker) {
+                map.removeLayer(marker);
+            }
+            marker = L.marker(e.latlng).addTo(map);
+        });
+
+        function useCurrentLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    updateLocation(position.coords.latitude, position.coords.longitude);
+                    if (marker) {
+                        map.removeLayer(marker);
+                    }
+                    marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+                });
+            } else {
+                alert("GeoLocation is not supported by this browser.");
+            }
+        }
+
+        function updateLocation(latitude, longitude) {
+            document.getElementById('id_latitude').value = latitude;
+            document.getElementById('id_longitude').value = longitude;
+        }
+    </script>
+</body>
+</html>
